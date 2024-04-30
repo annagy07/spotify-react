@@ -5,12 +5,13 @@ const TopTracks = () => {
   const [artistIdInput, setArtistIdInput] = useState("");
   const [topTracks, setTopTracks] = useState([]);
   const [accessToken, setAccessToken] = useState("");
+  console.log();
 
   // Function to fetch the Bearer token from Spotify
   const getAccessToken = async () => {
-    const clientID = "806b368d14984e61bba6acf096606cf6";
-    const clientSecret = "7b413241326342398c1d333222ee8b69";
-    const base64Encoded = btoa(`${clientID}:${clientSecret}`);
+    const base64Encoded = btoa(
+      `${import.meta.env.VITE_CLIENT_ID}:${import.meta.env.VITE_CLIENT_SECRET}`
+    );
 
     try {
       const response = await axios.post(
@@ -30,7 +31,6 @@ const TopTracks = () => {
     }
   };
 
-  // Function to fetch the top tracks of an artist by ID
   // Function to fetch the top tracks of an artist by ID
   const getTopTracks = async () => {
     try {

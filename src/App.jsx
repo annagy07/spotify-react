@@ -7,11 +7,12 @@ import "./App.css";
 function App() {
   return (
     <header className="app-header">
-      <h1>Spotify Playlist Creator</h1>
-      {/* <Login /> */}
+      <h1>Spotify Top Tracks Creator</h1>
+      <Login />
       <SimilarArtists />
     </header>
   );
 }
 
 export default App;
+
